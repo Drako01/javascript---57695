@@ -2,7 +2,7 @@
     <img src="https://jobs.coderhouse.com/assets/logos_coderhouse.png" alt="CoderHouse"  height="100"/>
 </p>
 
-# Bienvenidos a la Comisión #57705
+# Bienvenidos a la Comisión #57695
 
 <p align="center"> 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> 
