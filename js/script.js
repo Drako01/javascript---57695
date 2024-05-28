@@ -206,10 +206,19 @@ console.log(a, b, c, d);
 // console.log(a, b);
 
 // Ejemplo para Nahuel
-let usuario;
-do {
-    usuario = prompt("Ingrese su nombre");
-    (typeof usuario === 'string' && usuario.trim().length > 0) ? true : false;
-} while (usuario === null || typeof usuario !== 'string');
+let userInput;
 
-console.log("El usuario ingresado es: " + usuario);
+do {
+    userInput = prompt("Por favor, ingresa un string:");
+    
+    if (userInput === null || userInput === "") {
+        alert("Por favor, ingresa un valor.");
+    } else if (!isNaN(userInput)) {
+        alert("No se permiten números. Por favor, ingresa un string.");
+    } else if (userInput.trim() === "") {
+        alert("No se permiten cadenas vacías. Por favor, ingresa un string.");
+    }
+} while (userInput === null  || userInput === "" || !isNaN(userInput) || userInput.trim() === "");
+
+console.log("¡Ingresaste un string válido:", userInput);
+
