@@ -5,7 +5,14 @@
 }
 
 .navbar nav {
-    height: 6rem;
+    height: 4cqi;
+}
+
+.navbar nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
 }
 
 .navbar nav ul {
@@ -19,4 +26,9 @@ a {
 
 li {
     list-style: none;
+}
+
+.titulo {
+    text-align: center;
+    margin-top: 2rem;
 }
