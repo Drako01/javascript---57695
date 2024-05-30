@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+.navbar nav{
+    height: 6rem;
+}
+.navbar nav ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
