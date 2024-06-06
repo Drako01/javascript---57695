@@ -4,6 +4,15 @@
     font-family: 'Roboto';
 }
 
+body{
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background-color: black;
+    color: white;
+}
+
 .navbar nav {
     height: 4rem;
     background-color: #c3c3c3;    

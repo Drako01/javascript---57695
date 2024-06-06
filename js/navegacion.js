@@ -30,3 +30,31 @@ for (const link of links) {
     li.innerHTML = `<a href="${link.toLowerCase()}.html" >${link}</a>`
     ul.appendChild(li);
 }
+
+document.addEventListener('DOMContentLoaded' , function() {
+    const button = document.getElementById('toggle-button');
+
+    button.addEventListener('click', function() {
+        agregarClasedark();
+        updateTextButton();
+        removerClaseDark();
+    })
+
+    function agregarClasedark(){
+        cuerpo.classList.toggle('dark');
+    }
+    function updateTextButton() {
+        if(cuerpo.classList.contains('dark')) {
+            button.textContent = "Cambiar a modo claro";
+        } else {
+            button.textContent = "Cambiar a modo oscuro";
+        }
+    }
+    function removerClaseDark(){
+        setTimeout(() => {
+            cuerpo.classList.remove('dark');
+        }, 3000);
+    }
+    updateTextButton();
+});
+
