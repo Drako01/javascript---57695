@@ -6,6 +6,7 @@
 
 .navbar nav {
     height: 4rem;
+    background-color: #c3c3c3;    
 }
 
 .navbar nav {
@@ -20,8 +21,10 @@
     justify-content: space-evenly;
 }
 
-a {
+.navbar nav ul a {
     text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
 }
 
 li {
