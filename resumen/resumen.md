@@ -85,3 +85,101 @@ console.log("Fin");
 - **Call Stack**: Pila de funciones en ejecución.
 - **Event Loop**: Bucle que maneja el call stack y la message queue para gestionar la asincronía.
 - **Message Queue**: Cola donde se almacenan las tareas asincrónicas que esperan para ser ejecutadas.
+
+----
+
+# Promesas
+
+### ¿Qué es una Promesa?
+
+Una **promesa** es un objeto que representa la eventual finalización (o falla) de una operación asincrónica y su valor resultante.
+
+En términos simples, una promesa es algo que puede:
+
+1. **Pendiente (Pending)**: Está en espera de ser resuelta o rechazada.
+2. **Resuelta (Fulfilled)**: La operación se completó con éxito y tiene un valor.
+3. **Rechazada (Rejected)**: La operación falló y tiene una razón para el fallo.
+
+### Crear una Promesa
+
+Para crear una promesa, se usa el constructor `Promise`, que toma una función con dos parámetros: `resolve` y `reject`. `resolve` se llama cuando la operación es exitosa, y `reject` se llama cuando hay un error.
+
+```javascript
+let miPromesa = new Promise((resolve, reject) => {
+  let exito = true; // Cambia esto a false para simular un error
+  if (exito) {
+    resolve("¡Operación exitosa!");
+  } else {
+    reject("Algo salió mal.");
+  }
+});
+```
+
+### Usar una Promesa
+
+Las promesas tienen métodos `.then()` y `.catch()` para manejar los resultados.
+
+- **`.then()`**: Se ejecuta cuando la promesa se resuelve con éxito.
+- **`.catch()`**: Se ejecuta cuando la promesa es rechazada.
+
+```javascript
+miPromesa
+  .then((resultado) => {
+    console.log(resultado); // "¡Operación exitosa!"
+  })
+  .catch((error) => {
+    console.log(error); // "Algo salió mal."
+  });
+```
+
+### Encadenar Promesas
+
+Puedes encadenar múltiples `.then()` para manejar una serie de operaciones asincrónicas.
+
+```javascript
+let promesaEncadenada = new Promise((resolve, reject) => {
+  resolve("Paso 1 completado");
+});
+
+promesaEncadenada
+  .then((resultado) => {
+    console.log(resultado); // "Paso 1 completado"
+    return "Paso 2 completado";
+  })
+  .then((resultado) => {
+    console.log(resultado); // "Paso 2 completado"
+    return "Paso 3 completado";
+  })
+  .then((resultado) => {
+    console.log(resultado); // "Paso 3 completado"
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+### Promesas y Asincronía
+
+Las promesas son especialmente útiles para manejar operaciones asincrónicas como solicitudes de red.
+
+```javascript
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data); // Datos del API
+  })
+  .catch((error) => {
+    console.log("Error:", error);
+  });
+```
+
+### Resumen
+
+- **Promesa**: Un objeto que representa la eventual finalización de una operación asincrónica.
+- **Estados de una promesa**: Pendiente, resuelta, rechazada.
+- **Métodos**:
+  - `.then()`: Para manejar el resultado exitoso.
+  - `.catch()`: Para manejar errores.
+- **Encadenamiento**: Permite manejar múltiples operaciones asincrónicas en secuencia.
+
+Las promesas hacen que el código asincrónico sea más legible y manejable, evitando el "callback hell" y proporcionando una forma más limpia de manejar las operaciones asincrónicas.
