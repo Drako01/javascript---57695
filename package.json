@@ -1,0 +1,24 @@
+{
+  "name": "comision57695",
+  "version": "1.1.0",
+  "description": "Aplicacion en Node para la comision #57695",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drako01/javascript---57695.git"
+  },
+  "author": "Alejandro Di Stefano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Drako01/javascript---57695/issues"
+  },
+  "homepage": "https://github.com/Drako01/javascript---57695#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "sweetalert2": "^11.11.1",
+    "toastify-js": "^1.12.0"
+  }
+}
